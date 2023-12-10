@@ -1,6 +1,6 @@
 import random
 
-version = 0.25
+version = 0.30
 
 first_fam = ["bob", "bert", "bill", "ben"]
 second_fam = ["alex", "amanda", "angel", "alexandra"]
@@ -37,7 +37,9 @@ def givers():
         third3 = random.sample(third_fam,1)
         third4 = random.sample(third_fam,1)
 
-    print(first, first2, first3, first4, second, second2, second3, second4, third, third2, third3, third4)
+    print(first, first2, first3, first4, 
+          second, second2, second3, second4, 
+          third, third2, third3, third4)
 
 def getters():
     first_option1, first_option2, first_option3, first_option4 = random.randint(0,1), random.randint(0,1), random.randint(0,1), random.randint(0,1)
