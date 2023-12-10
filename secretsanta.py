@@ -1,4 +1,5 @@
 import random
+import tkinter as tk
 
 version = 0.32
 
@@ -85,8 +86,16 @@ def getters():
     print(choice1[specific1], choice2[specific2], choice3[specific3], choice4[specific4], 
           choice5[specific5], choice6[specific6], choice7[specific7], choice8[specific8],
           choice9[specific9], choice10[specific10], choice11[specific11], choice12[specific12])
+    
+def program():
+    window = tk.Tk()
+    label = tk.Label(text="Hello, Tkinter", background="#34A2FE", width = 60, height= 60)
+    label.pack()
+
+    window.mainloop()
 
 main(version)
 format()
 givers()
 getters()
+program()
