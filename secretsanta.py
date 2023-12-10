@@ -1,6 +1,6 @@
 import random
 
-version = 0.30
+version = 0.32
 
 first_fam = ["bob", "bert", "bill", "ben"]
 second_fam = ["alex", "amanda", "angel", "alexandra"]
