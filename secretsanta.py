@@ -89,7 +89,8 @@ def getters():
     
 def program():
     window = tk.Tk()
-    label = tk.Label(text="Hello, Tkinter", background="#34A2FE", width = 60, height= 60)
+    window.title("Secret Santa " + str(version))
+    label = tk.Label(text="Secret Santa", background="#34A2FE", width = 60, height= 60)
     label.pack()
 
     window.mainloop()
