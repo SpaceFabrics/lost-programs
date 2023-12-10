@@ -1,6 +1,6 @@
 import random
 
-version = 0.20
+version = 0.25
 
 first_fam = ["bob", "bert", "bill", "ben"]
 second_fam = ["alex", "amanda", "angel", "alexandra"]
@@ -9,8 +9,6 @@ third_fam = ["luke", "liam", "leonard", "lex"]
 first_others = [second_fam, third_fam]
 second_others = [first_fam, third_fam]
 third_others = [first_fam, second_fam]
-
-choice1 = ""
 
 def main(number):
     print("Secret Santa " + str(number))
@@ -39,22 +37,11 @@ def givers():
         third3 = random.sample(third_fam,1)
         third4 = random.sample(third_fam,1)
 
-    print(first)
-    print(first2)
-    print(first3)
-    print(first4)
-    print(second)
-    print(second2)
-    print(second3)
-    print(second4)
-    print(third)
-    print(third2)
-    print(third3)
-    print(third4)
+    print(first, first2, first3, first4, second, second2, second3, second4, third, third2, third3, third4)
 
 def getters():
-    option1, option2, option3, option4, option5, option6, option7, option8 = random.randint(0,1), random.randint(0,1), random.randint(0,1), random.randint(0,1), random.randint(0,1), random.randint(0,1) ,random.randint(0,1), random.randint(0,1)
-    specific1, specific2, specific3, specific4, specific5, specific6, specific7, specific8 = random.randint(0,3), random.randint(0,3), random.randint(0,3), random.randint(0,3), random.randint(0,3), random.randint(0,3), random.randint(0,3),random.randint(0,3)
+    first_option1, first_option2, first_option3, first_option4, second_option5, second_option6, second_option7, second_option8, third_option9, third_option10, third_option11, third_option12 = random.randint(0,1), random.randint(0,1), random.randint(0,1), random.randint(0,1), random.randint(0,1), random.randint(0,1) ,random.randint(0,1), random.randint(0,1)
+    specific1, specific2, specific3, specific4, specific5, specific6, specific7, specific8, specific9, specific10, specific11, specific12 = random.randint(0,3), random.randint(0,3), random.randint(0,3), random.randint(0,3), random.randint(0,3), random.randint(0,3), random.randint(0,3),random.randint(0,3)
 
     while specific1 == specific2 or specific1 == specific3 or specific1 == specific4 or specific2 == specific3 or specific2 == specific4 or specific3 == specific4:
         specific1 = random.randint(0,3)
@@ -68,16 +55,21 @@ def getters():
         specific7 = random.randint(0,3)
         specific8 = random.randint(0,3)
 
-    choice1 = first_others[option1]
-    choice2 = first_others[option2]
-    choice3 = first_others[option3]
-    choice4 = first_others[option4]
+    choice1 = first_others[first_option1]
+    choice2 = first_others[first_option2]
+    choice3 = first_others[first_option3]
+    choice4 = first_others[first_option4]
+    choice5 = second_others[second_option5]
+    choice6 = second_others[second_option6]
+    choice7 = second_others[second_option7]
+    choice8 = second_others[second_option8]
+    choice9 = third_others[third_option9]
+    choice10 = third_others[third_option10]
+    choice11 = third_others[third_option11]
+    choice12 = third_others[third_option12]
 
     print("Getters:")
-    print(choice1[specific1])
-    print(choice2[specific2])
-    print(choice3[specific3])
-    print(choice4[specific4])
+    print(choice1[specific1], choice2[specific2], choice3[specific3], choice4[specific4], choice5[specific5], choice6[specific6], choice7[specific7], choice8[specific8])
 
 main(version)
 format()
