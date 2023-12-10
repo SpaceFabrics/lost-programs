@@ -40,8 +40,13 @@ def givers():
     print(first, first2, first3, first4, second, second2, second3, second4, third, third2, third3, third4)
 
 def getters():
-    first_option1, first_option2, first_option3, first_option4, second_option5, second_option6, second_option7, second_option8, third_option9, third_option10, third_option11, third_option12 = random.randint(0,1), random.randint(0,1), random.randint(0,1), random.randint(0,1), random.randint(0,1), random.randint(0,1) ,random.randint(0,1), random.randint(0,1)
-    specific1, specific2, specific3, specific4, specific5, specific6, specific7, specific8, specific9, specific10, specific11, specific12 = random.randint(0,3), random.randint(0,3), random.randint(0,3), random.randint(0,3), random.randint(0,3), random.randint(0,3), random.randint(0,3),random.randint(0,3)
+    first_option1, first_option2, first_option3, first_option4 = random.randint(0,1), random.randint(0,1), random.randint(0,1), random.randint(0,1)
+    second_option5, second_option6, second_option7, second_option8 = random.randint(0,1), random.randint(0,1), random.randint(0,1), random.randint(0,1)
+    third_option9, third_option10, third_option11, third_option12 = random.randint(0,1), random.randint(0,1), random.randint(0,1), random.randint(0,1)
+
+    specific1, specific2, specific3, specific4 = random.randint(0,3), random.randint(0,3), random.randint(0,3), random.randint(0,3)
+    specific5, specific6, specific7, specific8 = random.randint(0,3), random.randint(0,3), random.randint(0,3), random.randint(0,3)
+    specific9, specific10, specific11, specific12 = random.randint(0,3), random.randint(0,3), random.randint(0,3), random.randint(0,3)
 
     while specific1 == specific2 or specific1 == specific3 or specific1 == specific4 or specific2 == specific3 or specific2 == specific4 or specific3 == specific4:
         specific1 = random.randint(0,3)
@@ -54,6 +59,12 @@ def getters():
         specific6 = random.randint(0,3)
         specific7 = random.randint(0,3)
         specific8 = random.randint(0,3)
+
+    while specific9 == specific10 or specific9 == specific11 or specific9 == specific12 or specific10 == specific11 or specific10 == specific12 or specific11 == specific12:
+        specific9 = random.randint(0,3)
+        specific10 = random.randint(0,3)
+        specific11 = random.randint(0,3)
+        specific12 = random.randint(0,3)
 
     choice1 = first_others[first_option1]
     choice2 = first_others[first_option2]
@@ -69,7 +80,9 @@ def getters():
     choice12 = third_others[third_option12]
 
     print("Getters:")
-    print(choice1[specific1], choice2[specific2], choice3[specific3], choice4[specific4], choice5[specific5], choice6[specific6], choice7[specific7], choice8[specific8])
+    print(choice1[specific1], choice2[specific2], choice3[specific3], choice4[specific4], 
+          choice5[specific5], choice6[specific6], choice7[specific7], choice8[specific8],
+          choice9[specific9], choice10[specific10], choice11[specific11], choice12[specific12])
 
 main(version)
 format()
