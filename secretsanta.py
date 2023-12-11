@@ -1,8 +1,8 @@
 import random
-import tkinter as tk
 from tkinter import *
+from tkinter import ttk
 
-version = 0.35
+version = 0.38
 
 first_fam = ["bob", "bert", "bill", "ben"]
 second_fam = ["alex", "amanda", "angel", "alexandra"]
@@ -88,12 +88,17 @@ def getters():
           choice5[specific5], choice6[specific6], choice7[specific7], choice8[specific8],
           choice9[specific9], choice10[specific10], choice11[specific11], choice12[specific12])
     
-def program():
-    window = tk.Tk()    
-    window.geometry('700x500')
+def get_data():
+    label.config(text= entry.get(), font= ('Helvetica 13'))
 
+def program():
+    window = Tk()    
+    window.geometry('1000x500')
     window.title("Secret Santa " + str(version))
-    label = tk.Label()
+    global label
+    global entry
+
+    label= Label(window, text="", font=('Helvetica 13'))    
     label.pack()
 
     L1 = Label(window, text="First Family")
@@ -105,11 +110,14 @@ def program():
     L3 = Label(window, text="Third Family")
     L3.place(x=290, y=35)
 
-    E1 = Entry(window, bd =5)
-    E1.place(x=35, y=400)
+    entry = Entry(window, bd =2)
+    entry.place(x=20, y=70)
+    entry.focus_set()
 
-    button = tk.Button(window, text='Quit', width=25, command=window.destroy)
+    button = Button(window, text='Quit', width=25, command=window.destroy)
     button.pack(side = BOTTOM, pady = 10)
+
+    ttk.Button(window, text= "Click to Show", command= get_data).place(relx= .7, rely= .5, anchor= CENTER)
 
     window.mainloop()
 
