@@ -1,7 +1,8 @@
 import random
 import tkinter as tk
+from tkinter import *
 
-version = 0.32
+version = 0.35
 
 first_fam = ["bob", "bert", "bill", "ben"]
 second_fam = ["alex", "amanda", "angel", "alexandra"]
@@ -88,10 +89,17 @@ def getters():
           choice9[specific9], choice10[specific10], choice11[specific11], choice12[specific12])
     
 def program():
-    window = tk.Tk()
+    window = tk.Tk()    
+
     window.title("Secret Santa " + str(version))
-    label = tk.Label(text="Secret Santa", background="#34A2FE", width = 60, height= 60)
+    label = tk.Label(width = 120, height= 40)
     label.pack()
+
+    L1 = Label(window, text="First Family")
+    L1.place(x=20, y=40)
+
+    button = tk.Button(window, text='Quit', width=25, command=window.destroy)
+    button.pack()
 
     window.mainloop()
 
