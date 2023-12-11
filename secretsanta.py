@@ -90,16 +90,26 @@ def getters():
     
 def program():
     window = tk.Tk()    
+    window.geometry('700x500')
 
     window.title("Secret Santa " + str(version))
-    label = tk.Label(width = 120, height= 40)
+    label = tk.Label()
     label.pack()
 
     L1 = Label(window, text="First Family")
-    L1.place(x=20, y=40)
+    L1.place(x=35, y=35)
+
+    L2 = Label(window, text="Second Family")
+    L2.place(x=160, y=35)
+
+    L3 = Label(window, text="Third Family")
+    L3.place(x=290, y=35)
+
+    E1 = Entry(window, bd =5)
+    E1.place(x=35, y=400)
 
     button = tk.Button(window, text='Quit', width=25, command=window.destroy)
-    button.pack()
+    button.pack(side = BOTTOM, pady = 10)
 
     window.mainloop()
 
