@@ -2,7 +2,7 @@ import random
 from tkinter import *
 from tkinter import ttk
 
-version = 0.53
+version = 0.54
 
 def main(number):
     print("Secret Santa " + str(number))
@@ -80,9 +80,51 @@ def name_positions():
     third_name4.place(x=310, y=155)
 
 def fam_setters():
-    pass
+    global first_fam
+    global second_fam
+    global third_fam
+    global first_others
+    global second_others
+    global third_others
+
+    first_fam = [names[0], names[1], names[2], names[3]]
+    second_fam = [names[4], names[5], names[6], names[7]]
+    third_fam = [names[8], names[9], names[10], names[11]]
+
+    first_others = [names[4], names[5], names[6], names[7], names[8], names[9], names[10], names[11]]
+    second_others = [names[0], names[1], names[2], names[3], names[8], names[9], names[10], names[11]]
+    third_others = [names[0], names[1], names[2], names[3], names[4], names[5], names[6], names[7]]
 
 def givers():
+    print(names[0], names[1], names[2], names[3], names[4], names[5], names[6], names[7], names[8], names[9], names[10], names[11])
+    giver1 = Label(window, text=names[0])
+    giver1.place(x=615, y=60)
+    giver2 = Label(window, text=names[1])
+    giver2.place(x=615, y= 90)
+    giver3 = Label(window, text=names[2])
+    giver3.place(x=615, y= 125)
+    giver4 = Label(window, text=names[3])
+    giver4.place(x=615, y= 155)
+    giver5 = Label(window, text=names[4])
+    giver5.place(x=615, y=190)
+    giver6 = Label(window, text=names[5])
+    giver6.place(x=615, y=220)
+    giver7 = Label(window, text=names[6])
+    giver7.place(x=615, y=245)
+    giver8 = Label(window, text=names[7])
+    giver8.place(x=615, y=270)
+    giver9 = Label(window, text=names[8])
+    giver9.place(x=615, y=300)
+    giver10 = Label(window, text=names[9])
+    giver10.place(x=615,y= 330)
+    giver11 = Label(window, text=names[10])
+    giver11.place(x=615,y=360)
+    giver12 = Label(window, text=names[11])
+    giver12.place(x=615,y=390)
+
+def getters():
+    first_fam = [names[0], names[1], names[2], names[3]]
+
     num1 = random.randint(0,11)
     num2 = random.randint(0,11)
     num3 = random.randint(0,11)
@@ -121,38 +163,11 @@ def givers():
         num10 = random.randint(0,11)
         num11 = random.randint(0,11)
         num12 = random.randint(0,11)
-
-    print(names[num1], names[num2], names[num3], names[num4], names[num5], names[num6], names[num7], names[num8], names[num9], names[num10], names[num11], names[num12])
-    giver1 = Label(window, text=names[num1])
-    giver1.place(x=615, y=60)
-    giver2 = Label(window, text=names[num2])
-    giver2.place(x=615, y= 90)
-    giver3 = Label(window, text=names[num3])
-    giver3.place(x=615, y= 125)
-    giver4 = Label(window, text=names[num4])
-    giver4.place(x=615, y= 155)
-    giver5 = Label(window, text=names[num5])
-    giver5.place(x=615, y=190)
-    giver6 = Label(window, text=names[num6])
-    giver6.place(x=615, y=220)
-    giver7 = Label(window, text=names[num7])
-    giver7.place(x=615, y=245)
-    giver8 = Label(window, text=names[num8])
-    giver8.place(x=615, y=270)
-    giver9 = Label(window, text=names[num9])
-    giver9.place(x=615, y=300)
-    giver10 = Label(window, text=names[num10])
-    giver10.place(x=615,y= 330)
-    giver11 = Label(window, text=names[num11])
-    giver11.place(x=615,y=360)
-    giver12 = Label(window, text=names[num12])
-    giver12.place(x=615,y=390)
-
-
-
-def getters():
-    pass
     
+    if names[1] in first_fam:
+        print("hi")
+
+
 def results():
     pass
 
