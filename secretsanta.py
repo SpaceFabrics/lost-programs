@@ -124,7 +124,9 @@ def givers():
 
 def getters():
     first_fam = [names[0], names[1], names[2], names[3]]
-
+    second_fam = [names[4], names[5], names[6], names[7]]
+    third_fam = [names[8], names[9], names[10], names[11]]
+    
     num1 = random.randint(0,11)
     num2 = random.randint(0,11)
     num3 = random.randint(0,11)
@@ -164,8 +166,89 @@ def getters():
         num11 = random.randint(0,11)
         num12 = random.randint(0,11)
     
-    if names[1] in first_fam:
-        print("hi")
+    if names[num1] in first_fam:
+        print("you are in first fam")
+    elif names[num1] in second_fam:
+        print("you are in second fam")
+    elif names[num1] in third_fam:
+        print("you are in third fam")
+        
+    if names[num2] in first_fam:
+        print("you are in first fam")
+    elif names[num2] in second_fam:
+        print("you are in second fam")
+    elif names[num2] in third_fam:
+        print("you are in third fam")
+        
+    if names[num3] in first_fam:
+        print("you are in first fam")
+    elif names[num3] in second_fam:
+        print("you are in second fam")
+    elif names[num4] in third_fam:
+        print("you are in third fam")
+
+    if names[num4] in first_fam:
+        print("you are in first fam")
+    elif names[num4] in second_fam:
+        print("you are in second fam")
+    elif names[num4] in third_fam:
+        print("you are in third fam")
+
+    if names[num5] in first_fam:
+        print("you are in first fam")
+    elif names[num5] in second_fam:
+        print("you are in second fam")
+    elif names[num5] in third_fam:
+        print("you are in third fam")
+
+    if names[num6] in first_fam:
+        print("you are in first fam")
+    elif names[num6] in second_fam:
+        print("you are in second fam")
+    elif names[num6] in third_fam:
+        print("you are in third fam")
+
+    if names[num7] in first_fam:
+        print("you are in first fam")
+    elif names[num7] in second_fam:
+        print("you are in second fam")
+    elif names[num7] in third_fam:
+        print("you are in third fam")
+
+    if names[num8] in first_fam:
+        print("you are in first fam")
+    elif names[num8] in second_fam:
+        print("you are in second fam")
+    elif names[num8] in third_fam:
+        print("you are in second fam")
+
+    if names[num9] in first_fam:
+        print("you are in first fam")
+    elif names[num9] in second_fam:
+        print("you are in second fam")
+    elif names[num9] in third_fam:
+        print("you are in third fam")
+
+    if names[num10] in first_fam:
+        print("you are in first fam")
+    elif names[num10] in second_fam:
+        print("you are in second fam")
+    elif names[num10] in third_fam:
+        print("you are in third fam")
+
+    if names[num11] in first_fam:
+        print("you are in first fam")
+    elif names[num11] in second_fam:
+        print("you are in second fam")
+    elif names[num11] in third_fam:
+        print("you are in third fam")
+
+    if names[num12] in first_fam:
+        print("you are in first fam")
+    elif names[num12] in second_fam:
+        print("you are in second fam")
+    elif names[num12] in third_fam:
+        print("you are in third fam")
 
 
 def results():
