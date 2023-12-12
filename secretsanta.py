@@ -2,7 +2,7 @@ import random
 from tkinter import *
 from tkinter import ttk
 
-version = 0.40
+version = 0.42
 
 first_fam = ["bob", "bert", "bill", "ben"]
 second_fam = ["alex", "amanda", "angel", "alexandra"]
@@ -95,6 +95,16 @@ def show_msg():
     label= Label(window, text= "YOU CLICKED THE BUTTON!", font= ('aerial 18 bold'))
     label.pack(pady= 20)
 
+def name_position_1():
+    global names
+    names = []
+    name1 = Label(window, text= entry.get())
+    name1.place(x=35,y=65)
+    names.insert(1, entry.get())
+
+def name_position_2()
+
+
 def program():
     global window
     window = Tk()    
@@ -105,10 +115,10 @@ def program():
     global slot1
     global slot2
 
-    slot1 = 20 
-    slot2 = 70
-    slot4 = 185
-    slot5 = 80
+    slot1 = 30
+    slot2 = 400
+    slot4 = 200
+    slot5 = 410
 
     label= Label(window, text="", font=('Helvetica 13'))    
     label.pack()
@@ -122,7 +132,6 @@ def program():
     L3 = Label(window, text="Third Family")
     L3.place(x=290, y=35)
 
-
     entry = Entry(window, bd =2)
     slot1 = entry.place(x=slot1, y=slot2)
     entry.focus_set()
@@ -130,7 +139,7 @@ def program():
     button = Button(window, text='Quit', width=25, command=window.destroy)
     button.pack(side = BOTTOM, pady = 5)
 
-    ttk.Button(window, text= "Add", command= lambda:[show_msg(), get_data()]).place(x= slot4, y= slot5, anchor= CENTER)
+    ttk.Button(window, text= "Add", command= lambda:[name_position_1(), show_msg(), get_data()]).place(x= slot4, y= slot5, anchor= CENTER)
 
     window.mainloop()
 
@@ -139,3 +148,5 @@ format()
 givers()
 getters()
 program()
+
+print(names)
