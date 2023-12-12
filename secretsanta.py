@@ -2,7 +2,7 @@ import random
 from tkinter import *
 from tkinter import ttk
 
-version = 0.46
+version = 0.51
 
 def main(number):
     print("Secret Santa " + str(number))
@@ -80,85 +80,70 @@ def name_positions():
     third_name4.place(x=310, y=155)
 
 def fam_setters():
-    first_fam = [names[1], names[2], names[3], names[4]]
-    second_fam = [names[5], names[6], names[7], names[8]]
-    third_fam = [names[9], names[10], names[11], names[12]]
-
-    first_others = [second_fam, third_fam]
-    second_others = [first_fam, third_fam]
-    third_others = [first_fam, second_fam]
+    pass
 
 def givers():
-    first, first2, first3, first4, second, second2, second3, second4, third, third2, third3, third4 = "","","","","","","","","","","","",
+    num1 = random.randint(0,11)
+    num2 = random.randint(0,11)
+    num3 = random.randint(0,11)
+    num4 = random.randint(0,11)
+    num5 = random.randint(0,11)
+    num6 = random.randint(0,11)
+    num7 = random.randint(0,11)
+    num8 = random.randint(0,11)
+    num9 = random.randint(0,11)
+    num10 = random.randint(0,11)
+    num11 = random.randint(0,11)
+    num12 = random.randint(0,11)
+    
+    while (num1 == num2 or num1 == num3 or num1 == num4 or num1 == num5 or num1 == num6 
+           or num1 == num7 or num1 == num8 or num1 == num8 or num1 == num9 or num1 == num10
+           or num1 == num11 or num1 == num12 or num2 == num3 or num2 == num4 or num2 == num5 
+           or num2 == num6 or num2 == num7 or num2 == num8 or num2 == num9 or num2 == num10 
+           or num2 == num11 or num2 == num12 or num3 == num4 or num3 == num5 or num3 == num6 
+           or num3 == num7 or num3 == num8 or num3 == num9 or num3 == num10 or num3 == num11 
+           or num3 == num12 or num4 == num5 or num4 == num6 or num4 == num7 or num4 == num8 
+           or num4 == num9 
 
-    while first == first2 or first == first3 or first == first4 or first2 == first3 or first2 == first4 or first3 == first4:
-        first = random.sample(first_fam, 1)
-        first2 = random.sample(first_fam, 1)
-        first3 = random.sample(first_fam, 1)
-        first4 = random.sample(first_fam, 1)
+           or num5 == num6 or num5 == num7 or num5 == num8
+           or num5 == num9 or num6 == num7 or num6 == num8 or num6 == num9 or num7 == num8
+           or num7 == num9 or num8 == num9):
+        num1 = random.randint(0,9)
+        num2 = random.randint(0,9)
+        num3 = random.randint(0,9)
+        num4 = random.randint(0,9)
+        num5 = random.randint(0,9)
+        num6 = random.randint(0,9)
+        num7 = random.randint(0,9)
+        num8 = random.randint(0,9)
+        num9 = random.randint(0,9)
 
-    while second == second2 or second == second3 or second == second4 or second2 == second3 or second2 == second4 or second3 == second4:
-        second = random.sample(second_fam,1)
-        second2 = random.sample(second_fam,1)
-        second3 = random.sample(second_fam,1)
-        second4 = random.sample(second_fam,1)
+    print(names[num1], names[num2], names[num3], names[num4], names[num5], names[num6], names[num7], names[num8], names[num9])
+    giver1 = Label(window, text=names[num1])
+    giver1.place(x=615, y=60)
+    giver2 = Label(window, text=names[num2])
+    giver2.place(x=615, y= 90)
+    giver3 = Label(window, text=names[num3])
+    giver3.place(x=615, y= 125)
+    giver4 = Label(window, text=names[num4])
+    giver4.place(x=615, y= 155)
+    giver5 = Label(window, text=names[num5])
+    giver5.place(x=615, y=190)
+    giver6 = Label(window, text=names[num6])
+    giver6.place(x=615, y=220)
+    giver7 = Label(window, text=names[num7])
+    giver7.place(x=615, y=245)
+    giver8 = Label(window, text=names[num8])
+    giver8.place(x=615, y=270)
+    giver9 = Label(window, text=names[num9])
+    giver9.place(x=615, y=300)
 
-    while third == third2 or third == third3 or third == third4 or third2 == third3 or third2 == third4 or third3 ==third4:
-        third = random.sample(third_fam,1)
-        third2 = random.sample(third_fam,1)
-        third3 = random.sample(third_fam,1)
-        third4 = random.sample(third_fam,1)
 
-    print(first, first2, first3, first4, 
-          second, second2, second3, second4, 
-          third, third2, third3, third4)
 
 def getters():
-    first_option1, first_option2, first_option3, first_option4 = random.randint(0,1), random.randint(0,1), random.randint(0,1), random.randint(0,1)
-    second_option5, second_option6, second_option7, second_option8 = random.randint(0,1), random.randint(0,1), random.randint(0,1), random.randint(0,1)
-    third_option9, third_option10, third_option11, third_option12 = random.randint(0,1), random.randint(0,1), random.randint(0,1), random.randint(0,1)
-
-    specific1, specific2, specific3, specific4 = random.randint(0,3), random.randint(0,3), random.randint(0,3), random.randint(0,3)
-    specific5, specific6, specific7, specific8 = random.randint(0,3), random.randint(0,3), random.randint(0,3), random.randint(0,3)
-    specific9, specific10, specific11, specific12 = random.randint(0,3), random.randint(0,3), random.randint(0,3), random.randint(0,3)
-
-    while specific1 == specific2 or specific1 == specific3 or specific1 == specific4 or specific2 == specific3 or specific2 == specific4 or specific3 == specific4:
-        specific1 = random.randint(0,3)
-        specific2 = random.randint(0,3)
-        specific3 = random.randint(0,3)
-        specific4 = random.randint(0,3)
-
-    while specific5 == specific6 or specific5 == specific7 or specific5 == specific8 or specific6 == specific7 or specific6 == specific8 or specific7 == specific8:
-        specific5 = random.randint(0,3)
-        specific6 = random.randint(0,3)
-        specific7 = random.randint(0,3)
-        specific8 = random.randint(0,3)
-
-    while specific9 == specific10 or specific9 == specific11 or specific9 == specific12 or specific10 == specific11 or specific10 == specific12 or specific11 == specific12:
-        specific9 = random.randint(0,3)
-        specific10 = random.randint(0,3)
-        specific11 = random.randint(0,3)
-        specific12 = random.randint(0,3)
-
-    choice1 = first_others[first_option1]
-    choice2 = first_others[first_option2]
-    choice3 = first_others[first_option3]
-    choice4 = first_others[first_option4]
-    choice5 = second_others[second_option5]
-    choice6 = second_others[second_option6]
-    choice7 = second_others[second_option7]
-    choice8 = second_others[second_option8]
-    choice9 = third_others[third_option9]
-    choice10 = third_others[third_option10]
-    choice11 = third_others[third_option11]
-    choice12 = third_others[third_option12]
-
-    print("Getters:")
-    print(choice1[specific1], choice2[specific2], choice3[specific3], choice4[specific4], 
-          choice5[specific5], choice6[specific6], choice7[specific7], choice8[specific8],
-          choice9[specific9], choice10[specific10], choice11[specific11], choice12[specific12])
-
-def name_position_2():
+    pass
+    
+def results():
     pass
 
 def program():
@@ -171,12 +156,16 @@ def program():
 
     slot4 = 200
     slot5 = 410
+    slot6 = 350
+    slot7 = 410
+
 
     headings()
     entry1()
     quit()
 
     ttk.Button(window, text= "Add", command= lambda:[entry1, participants(), name_positions(),]).place(x= slot4, y= slot5, anchor= CENTER)
+    ttk.Button(window, text= "Randomize", command= lambda:[givers(), getters(), results()]).place(x= slot6, y= slot7, anchor= CENTER)
 
     window.mainloop()
 
