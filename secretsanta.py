@@ -2,7 +2,7 @@ import random
 from tkinter import *
 from tkinter import ttk
 
-version = 0.43
+version = 0.44
 
 first_fam = ["bob", "bert", "bill", "ben"]
 second_fam = ["alex", "amanda", "angel", "alexandra"]
@@ -123,17 +123,23 @@ def entry1():
     entry.place(x=slot1, y=slot2)
     entry.focus_set()
 
-def name_position_1():
-    name1 = Label(window, text= entry.get())
-    name1.place(x=35,y=65)
-
 def participants():
     new_name = entry.get()
     names.append(new_name)
     print(names)
 
+def name_positions():
+    name1 = Label(window, text= names[1])
+    name1.place(x=35,y=65)
+    name2 = Label(window, text= names[2])
+    name2.place(x=35, y=95)
+    name3 = Label(window, text= names[3])
+    name3.place(x=35, y=125)
+    name4 = Label(window,text= names[4])
+    name4.place(x=35, y=155)
+
 def name_position_2():
-    name2 = Label(window, text= entry.get())
+    pass
 
 def program():
     global window
@@ -152,7 +158,7 @@ def program():
 
     quit()
 
-    ttk.Button(window, text= "Add", command= lambda:[name_position_1(), show_msg(), entry1, participants()]).place(x= slot4, y= slot5, anchor= CENTER)
+    ttk.Button(window, text= "Add", command= lambda:[show_msg(), entry1, participants(), name_positions(),]).place(x= slot4, y= slot5, anchor= CENTER)
 
     window.mainloop()
 
