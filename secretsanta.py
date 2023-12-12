@@ -2,21 +2,91 @@ import random
 from tkinter import *
 from tkinter import ttk
 
-version = 0.44
-
-first_fam = ["bob", "bert", "bill", "ben"]
-second_fam = ["alex", "amanda", "angel", "alexandra"]
-third_fam = ["luke", "liam", "leonard", "lex"]
-
-first_others = [second_fam, third_fam]
-second_others = [first_fam, third_fam]
-third_others = [first_fam, second_fam]
+version = 0.46
 
 def main(number):
     print("Secret Santa " + str(number))
 
 def format():
     print("Givers:")
+    
+def quit():
+    button = Button(window, text='Quit', width=25, command=window.destroy)
+    button.pack(side = BOTTOM, pady = 5)   
+    
+def get_data():
+    label.config(text= entry.get(), font= ('Helvetica 13'))
+
+def show_msg():
+    label= Label(window, text= "YOU CLICKED THE BUTTON!", font= ('aerial 18 bold'))
+    label.pack(pady= 20)
+
+def headings():
+    L1 = Label(window, text="First Family")
+    L1.place(x=35, y=35)
+    L2 = Label(window, text="Second Family")
+    L2.place(x=160, y=35)
+    L3 = Label(window, text="Third Family")
+    L3.place(x=290, y=35)
+    heading1 = Label(window, text="Givers")
+    heading1.place(x=600, y=35)
+    heading2 = Label(window, text="Getters")
+    heading2.place(x=800, y=35)
+
+def list_creation():
+    global names
+    names = ['hi']
+
+list_creation()
+
+def entry1():
+    global new_name
+    slot1 = 30
+    slot2 = 400
+    global entry
+    entry = Entry(window, bd =2)
+    entry.place(x=slot1, y=slot2)
+    entry.focus_set()
+
+def participants():
+    new_name = entry.get()
+    names.append(new_name)
+    print(names)
+
+def name_positions():
+    first_name1 = Label(window, text= names[1])
+    first_name1.place(x=55,y=65)
+    first_name2 = Label(window, text= names[2])
+    first_name2.place(x=55, y=95)
+    first_name3 = Label(window, text= names[3])
+    first_name3.place(x=55, y=125)
+    first_name4 = Label(window,text= names[4])
+    first_name4.place(x=55, y=155)
+    second_name1 = Label(window, text= names[5])
+    second_name1.place(x=190, y=65 )
+    second_name2 = Label(window, text= names[6])
+    second_name2.place(x=190, y=95)
+    second_name3 = Label(window, text= names[7])
+    second_name3.place(x=190, y=125)
+    second_name4 = Label(window, text= names[8])
+    second_name4.place(x=190, y= 155)
+    third_name1 = Label(window, text= names[9])
+    third_name1.place(x=310, y=65)
+    third_name2 = Label(window, text= names[10])
+    third_name2.place(x=310, y=95)
+    third_name3 = Label(window, text= names[11])
+    third_name3.place(x=310, y=125)
+    third_name4 = Label(window, text= names[12])
+    third_name4.place(x=310, y=155)
+
+def fam_setters():
+    first_fam = [names[1], names[2], names[3], names[4]]
+    second_fam = [names[5], names[6], names[7], names[8]]
+    third_fam = [names[9], names[10], names[11], names[12]]
+
+    first_others = [second_fam, third_fam]
+    second_others = [first_fam, third_fam]
+    third_others = [first_fam, second_fam]
 
 def givers():
     first, first2, first3, first4, second, second2, second3, second4, third, third2, third3, third4 = "","","","","","","","","","","","",
@@ -87,56 +157,6 @@ def getters():
     print(choice1[specific1], choice2[specific2], choice3[specific3], choice4[specific4], 
           choice5[specific5], choice6[specific6], choice7[specific7], choice8[specific8],
           choice9[specific9], choice10[specific10], choice11[specific11], choice12[specific12])
-    
-def quit():
-    button = Button(window, text='Quit', width=25, command=window.destroy)
-    button.pack(side = BOTTOM, pady = 5)   
-    
-def get_data():
-    label.config(text= entry.get(), font= ('Helvetica 13'))
-
-def show_msg():
-    label= Label(window, text= "YOU CLICKED THE BUTTON!", font= ('aerial 18 bold'))
-    label.pack(pady= 20)
-
-def headings():
-    L1 = Label(window, text="First Family")
-    L1.place(x=35, y=35)
-
-    L2 = Label(window, text="Second Family")
-    L2.place(x=160, y=35)
-
-    L3 = Label(window, text="Third Family")
-    L3.place(x=290, y=35)
-
-def list_creation():
-    global names
-    names = ['hi']
-
-list_creation()
-def entry1():
-    global new_name
-    slot1 = 30
-    slot2 = 400
-    global entry
-    entry = Entry(window, bd =2)
-    entry.place(x=slot1, y=slot2)
-    entry.focus_set()
-
-def participants():
-    new_name = entry.get()
-    names.append(new_name)
-    print(names)
-
-def name_positions():
-    name1 = Label(window, text= names[1])
-    name1.place(x=35,y=65)
-    name2 = Label(window, text= names[2])
-    name2.place(x=35, y=95)
-    name3 = Label(window, text= names[3])
-    name3.place(x=35, y=125)
-    name4 = Label(window,text= names[4])
-    name4.place(x=35, y=155)
 
 def name_position_2():
     pass
@@ -153,19 +173,15 @@ def program():
     slot5 = 410
 
     headings()
-
     entry1()
-
     quit()
 
-    ttk.Button(window, text= "Add", command= lambda:[show_msg(), entry1, participants(), name_positions(),]).place(x= slot4, y= slot5, anchor= CENTER)
+    ttk.Button(window, text= "Add", command= lambda:[entry1, participants(), name_positions(),]).place(x= slot4, y= slot5, anchor= CENTER)
 
     window.mainloop()
 
 main(version)
 format()
-givers()
-getters()
 program()
 
 print(names)
