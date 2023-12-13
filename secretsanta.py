@@ -2,7 +2,7 @@ import random
 from tkinter import *
 from tkinter import ttk
 
-version = 0.54
+version = 0.56
 
 def main(number):
     print("Secret Santa " + str(number))
@@ -126,7 +126,11 @@ def getters():
     first_fam = [names[0], names[1], names[2], names[3]]
     second_fam = [names[4], names[5], names[6], names[7]]
     third_fam = [names[8], names[9], names[10], names[11]]
-    
+
+    first_others = []
+    second_others = []
+    third_others = []
+
     num1 = random.randint(0,11)
     num2 = random.randint(0,11)
     num3 = random.randint(0,11)
@@ -141,7 +145,7 @@ def getters():
     num12 = random.randint(0,11)
     
     while(num1 == num2 or num1 == num3 or num1 == num4 or num1 == num5 or num1 == num6 
-           or num1 == num7 or num1 == num8 or num1 == num8 or num1 == num9 or num1 == num10
+           or num1 == num7 or num1 == num8 or num1 == num9 or num1 == num10
            or num1 == num11 or num1 == num12 or num2 == num3 or num2 == num4 or num2 == num5 
            or num2 == num6 or num2 == num7 or num2 == num8 or num2 == num9 or num2 == num10 
            or num2 == num11 or num2 == num12 or num3 == num4 or num3 == num5 or num3 == num6 
@@ -149,7 +153,7 @@ def getters():
            or num3 == num12 or num4 == num5 or num4 == num6 or num4 == num7 or num4 == num8 
            or num4 == num9 or num4 == num10 or num4 == num11 or num4 == num12 or num5 == num6 
            or num5 == num7 or num5 == num8 or num5 == num9 or num5 == num10 or num5 == num11 or num5 == num12
-           or num6 == num7 or num6 == num8 or num6 == num9 or num6 == num10 or num6 == num11 or num12 
+           or num6 == num7 or num6 == num8 or num6 == num9 or num6 == num10 or num6 == num11 or num6 == num12 
            or num7 == num8 or num7 == num9 or num7 == num10 or num7 == num11 or num7 == num12
            or num8 == num9 or num8 == num10 or num8 == num11 or num8 == num12 or num9 == num10 
            or num9 == num11 or num9 == num12 or num10 == num11 or num10 == num12 or num11 == num12):
@@ -167,32 +171,32 @@ def getters():
         num12 = random.randint(0,11)
     
     if names[num1] in first_fam:
-        print("you are in first fam")
+        first_others.append(names[num1])
     elif names[num1] in second_fam:
-        print("you are in second fam")
+        second_others.append(names[num1])
     elif names[num1] in third_fam:
-        print("you are in third fam")
+        third_others.append(names[num1])
         
     if names[num2] in first_fam:
-        print("you are in first fam")
+        first_others.append(names[num2])
     elif names[num2] in second_fam:
-        print("you are in second fam")
+        second_others.append(names[num2])
     elif names[num2] in third_fam:
-        print("you are in third fam")
+        third_others.append(names[num2])
         
     if names[num3] in first_fam:
-        print("you are in first fam")
+        first_others.append(names[num3])
     elif names[num3] in second_fam:
-        print("you are in second fam")
+        second_others.append(names[num3])
     elif names[num4] in third_fam:
-        print("you are in third fam")
+        third_others.append(names[num3])
 
     if names[num4] in first_fam:
-        print("you are in first fam")
+        first_others.append(names[num4])
     elif names[num4] in second_fam:
-        print("you are in second fam")
+        second_others.append(names[num4])
     elif names[num4] in third_fam:
-        print("you are in third fam")
+        third_others.append(names[num4])
 
     if names[num5] in first_fam:
         print("you are in first fam")
@@ -249,10 +253,6 @@ def getters():
         print("you are in second fam")
     elif names[num12] in third_fam:
         print("you are in third fam")
-
-
-def results():
-    pass
 
 def program():
     global window
