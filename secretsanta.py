@@ -199,61 +199,61 @@ def getters():
         third_others.append(names[num4])
 
     if names[num5] in first_fam:
-        print("you are in first fam")
+        first_others.append(names[num5])
     elif names[num5] in second_fam:
-        print("you are in second fam")
+        second_others.append(names[num5])
     elif names[num5] in third_fam:
-        print("you are in third fam")
+        third_others.append(names[num5])
 
     if names[num6] in first_fam:
-        print("you are in first fam")
+        first_others.append(names[num6])
     elif names[num6] in second_fam:
-        print("you are in second fam")
+        second_others.append(names[num6])
     elif names[num6] in third_fam:
-        print("you are in third fam")
+        third_others.append(names[num6])
 
     if names[num7] in first_fam:
-        print("you are in first fam")
+        first_others.append(names[num7])
     elif names[num7] in second_fam:
-        print("you are in second fam")
+        second_others.append(names[num7])
     elif names[num7] in third_fam:
-        print("you are in third fam")
+        third_others.append(names[num7])
 
     if names[num8] in first_fam:
-        print("you are in first fam")
+        first_others.append(names[num8])
     elif names[num8] in second_fam:
-        print("you are in second fam")
+        second_others.append(names[num8])
     elif names[num8] in third_fam:
-        print("you are in second fam")
+        third_others.append(names[num8])
 
     if names[num9] in first_fam:
-        print("you are in first fam")
+        first_others.append(names[num9])
     elif names[num9] in second_fam:
-        print("you are in second fam")
+        second_others.append(names[num9])
     elif names[num9] in third_fam:
-        print("you are in third fam")
+        third_others.append(names[num9])
 
     if names[num10] in first_fam:
-        print("you are in first fam")
+        first_others.append(names[num10])
     elif names[num10] in second_fam:
-        print("you are in second fam")
+        second_others.append(names[num10])
     elif names[num10] in third_fam:
-        print("you are in third fam")
+        third_others.append(names[num10])
 
     if names[num11] in first_fam:
-        print("you are in first fam")
+        first_others.append(names[num11])
     elif names[num11] in second_fam:
-        print("you are in second fam")
+        second_others.append(names[num11])
     elif names[num11] in third_fam:
-        print("you are in third fam")
+        third_others.append(names[num11])
 
     if names[num12] in first_fam:
-        print("you are in first fam")
+        first_others.append(names[num12])
     elif names[num12] in second_fam:
-        print("you are in second fam")
+        second_others.append(names[num12])
     elif names[num12] in third_fam:
-        print("you are in third fam")
-
+        third_others.append(names[num12])
+        
 def program():
     global window
     window = Tk()    
