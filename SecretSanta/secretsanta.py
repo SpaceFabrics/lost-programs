@@ -2,7 +2,7 @@ import random
 from tkinter import *
 from tkinter import ttk
 
-version = 0.59
+version = 0.61
 
 def main(number):
     print("Secret Santa " + str(number))
@@ -171,88 +171,128 @@ def getters():
         num12 = random.randint(0,11)
     
     if names[num1] in first_fam:
-        first_others.append(names[num1])
-    elif names[num1] in second_fam:
         second_others.append(names[num1])
-    elif names[num1] in third_fam:
         third_others.append(names[num1])
+    elif names[num1] in second_fam:
+        first_others.append(names[num1])
+        third_others.append(names[num1])
+    elif names[num1] in third_fam:
+        first_others.append(names[num1])
+        second_others.append(names[num1])
+
         
     if names[num2] in first_fam:
-        first_others.append(names[num2])
-    elif names[num2] in second_fam:
         second_others.append(names[num2])
-    elif names[num2] in third_fam:
         third_others.append(names[num2])
+    elif names[num2] in second_fam:
+        first_others.append(names[num2])
+        third_others.append(names[num2])
+    elif names[num2] in third_fam:
+        first_others.append(names[num2])
+        second_others.append(names[num2])
+
         
     if names[num3] in first_fam:
-        first_others.append(names[num3])
-    elif names[num3] in second_fam:
         second_others.append(names[num3])
-    elif names[num4] in third_fam:
         third_others.append(names[num3])
+    elif names[num3] in second_fam:
+        first_others.append(names[num3])
+        third_others.append(names[num3])
+    elif names[num3] in third_fam:
+        first_others.append(names[num3])
+        second_others.append(names[num3])
+
 
     if names[num4] in first_fam:
-        first_others.append(names[num4])
-    elif names[num4] in second_fam:
         second_others.append(names[num4])
-    elif names[num4] in third_fam:
         third_others.append(names[num4])
+    elif names[num4] in second_fam:
+        first_others.append(names[num4])
+        third_others.append(names[num4])
+    elif names[num4] in third_fam:
+        first_others.append(names[num4])
+        second_others.append(names[num4])
+
 
     if names[num5] in first_fam:
-        first_others.append(names[num5])
-    elif names[num5] in second_fam:
         second_others.append(names[num5])
-    elif names[num5] in third_fam:
         third_others.append(names[num5])
+    elif names[num5] in second_fam:
+        first_others.append(names[num5])
+        third_others.append(names[num5])
+    elif names[num5] in third_fam:
+        first_others.append(names[num5])
+        second_others.append(names[num5])
 
     if names[num6] in first_fam:
-        first_others.append(names[num6])
-    elif names[num6] in second_fam:
         second_others.append(names[num6])
-    elif names[num6] in third_fam:
         third_others.append(names[num6])
+    elif names[num6] in second_fam:
+        first_others.append(names[num6])
+        third_others.append(names[num6])
+    elif names[num6] in third_fam:
+        first_others.append(names[num6])
+        second_others.append(names[num6])
 
     if names[num7] in first_fam:
-        first_others.append(names[num7])
-    elif names[num7] in second_fam:
         second_others.append(names[num7])
-    elif names[num7] in third_fam:
         third_others.append(names[num7])
+    elif names[num7] in second_fam:
+        first_others.append(names[num7])
+        third_others.append(names[num7])
+    elif names[num7] in third_fam:
+        first_others.append(names[num7])
+        second_others.append(names[num7])
 
     if names[num8] in first_fam:
-        first_others.append(names[num8])
-    elif names[num8] in second_fam:
         second_others.append(names[num8])
-    elif names[num8] in third_fam:
         third_others.append(names[num8])
-
+    elif names[num8] in second_fam:
+        first_others.append(names[num8])
+        third_others.append(names[num8])
+    elif names[num8] in third_fam:
+        first_others.append(names[num8])
+        second_others.append(names[num8])
+    
     if names[num9] in first_fam:
-        first_others.append(names[num9])
-    elif names[num9] in second_fam:
         second_others.append(names[num9])
-    elif names[num9] in third_fam:
         third_others.append(names[num9])
+    elif names[num9] in second_fam:
+        first_others.append(names[num9])
+        third_others.append(names[num9])
+    elif names[num9] in third_fam:
+        first_others.append(names[num9])
+        second_others.append(names[num9])
 
     if names[num10] in first_fam:
-        first_others.append(names[num10])
-    elif names[num10] in second_fam:
         second_others.append(names[num10])
-    elif names[num10] in third_fam:
         third_others.append(names[num10])
+    elif names[num10] in second_fam:
+        first_others.append(names[num10])
+        third_others.append(names[num10])
+    elif names[num10] in third_fam:
+        first_others.append(names[num10])
+        second_others.append(names[num10])
 
     if names[num11] in first_fam:
-        first_others.append(names[num11])
-    elif names[num11] in second_fam:
         second_others.append(names[num11])
-    elif names[num11] in third_fam:
         third_others.append(names[num11])
+    elif names[num11] in second_fam:
+        first_others.append(names[num11])
+        third_others.append(names[num11])
+    elif names[num11] in third_fam:
+        first_others.append(names[num11])
+        second_others.append(names[num11])
 
     if names[num12] in first_fam:
-        first_others.append(names[num12])
-    elif names[num12] in second_fam:
         second_others.append(names[num12])
-    elif names[num12] in third_fam:
         third_others.append(names[num12])
+    elif names[num12] in second_fam:
+        first_others.append(names[num12])
+        third_others.append(names[num12])
+    elif names[num12] in third_fam:
+        first_others.append(names[num12])
+        second_others.append(names[num12])
 
     getter = Label(window, text=first_others[0])
     getter.place(x=800, y=60)
@@ -272,11 +312,11 @@ def getters():
     getter8.place(x=800, y=270)
     getter9 = Label(window, text=third_others[0])
     getter9.place(x=800, y=300)
-    getter10 = Label(window, text=third_others[0])
+    getter10 = Label(window, text=third_others[1])
     getter10.place(x=800, y=330)
-    getter11 = Label(window, text=third_others[1])
+    getter11 = Label(window, text=third_others[2])
     getter11.place(x=800, y=360)
-    getter12 = Label(window, text=third_others[2])
+    getter12 = Label(window, text=third_others[3])
     getter12.place(x=800, y=390)
 
 def program():
