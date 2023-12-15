@@ -2,7 +2,7 @@ import random
 from tkinter import *
 from tkinter import ttk
 
-version = 0.56
+version = 0.59
 
 def main(number):
     print("Secret Santa " + str(number))
@@ -253,7 +253,32 @@ def getters():
         second_others.append(names[num12])
     elif names[num12] in third_fam:
         third_others.append(names[num12])
-        
+
+    getter = Label(window, text=first_others[0])
+    getter.place(x=800, y=60)
+    getter2 = Label(window, text=first_others[1])
+    getter2.place(x=800, y=90)
+    getter3 = Label(window,text=first_others[2])
+    getter3.place(x=800, y=125)
+    getter4 = Label(window, text=first_others[3])
+    getter4.place(x=800,y=155)
+    getter5 = Label(window, text=second_others[0])
+    getter5.place(x=800,y=190)
+    getter6 = Label(window, text=second_others[1])
+    getter6.place(x=800,y=220)
+    getter7 = Label(window, text=second_others[2])
+    getter7.place(x=800, y=245)
+    getter8 = Label(window,text=second_others[3])
+    getter8.place(x=800, y=270)
+    getter9 = Label(window, text=third_others[0])
+    getter9.place(x=800, y=300)
+    getter10 = Label(window, text=third_others[0])
+    getter10.place(x=800, y=330)
+    getter11 = Label(window, text=third_others[1])
+    getter11.place(x=800, y=360)
+    getter12 = Label(window, text=third_others[2])
+    getter12.place(x=800, y=390)
+
 def program():
     global window
     window = Tk()    
@@ -266,7 +291,6 @@ def program():
     slot5 = 410
     slot6 = 350
     slot7 = 410
-
 
     headings()
     entry1()
