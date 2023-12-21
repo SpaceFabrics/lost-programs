@@ -191,7 +191,6 @@ def getters():
         first_others.append(names[num2])
         second_others.append(names[num2])
 
-        
     if names[num3] in first_fam:
         second_others.append(names[num3])
         third_others.append(names[num3])
@@ -336,6 +335,12 @@ def program():
     entry1()
     quit()
 
+    if not input("Hit ENTER to roll a single dice: "):
+        entry1()
+        participants()
+        name_positions()
+    else:
+        print("exiting program.")
     ttk.Button(window, text= "Add", command= lambda:[entry1, participants(), name_positions(),]).place(x= slot4, y= slot5, anchor= CENTER)
     ttk.Button(window, text= "Randomize", command= lambda:[givers(), getters(), results()]).place(x= slot6, y= slot7, anchor= CENTER)
 
