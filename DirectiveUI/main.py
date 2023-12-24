@@ -22,10 +22,9 @@ def Start():
     L1.place(x=65, y=150)
 
 def app1():
-    root = Tk()
     canvas = Canvas()
-    root.mainloop()
-    create_oval(x0, y0, x1, y1)
+    window.create_rectangle(1,1,1,40,outline ="black",fill ="white",width = 2)    
+    window.pack()
 
 main(version)
 Window()
