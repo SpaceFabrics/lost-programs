@@ -37,6 +37,39 @@ class ImageGridApp:
                 label_button.bind("<Button-1>", lambda event, i=i, j=j: self.on_thumbnail_click(i, j))
                 self.labels.append(label_button)
 
+    def create_time_grid(self):
+        frame = tk.Frame(self.root, width=800, height=400)
+        frame.grid(row=1, column=3, padx=5, pady=5)
+        frame.config(bg="black")
+        self.time_frame = frame  
+        time_label = tk.Label(frame, font=('Courier', 85, 'bold'), background='black', foreground='white')
+        time_label.place(relx=0.5, rely=0.5, anchor='center')
+        back_button = tk.Button(frame, font=('Courier', 30, 'bold'), background='black', foreground='red', cursor="hand2", command=self.back)
+        back_button.place(x=25,y=300)
+        self.update_time(time_label)
+        self.update_back(back_button)
+
+    def create_calculator_grid(self):
+        frame = tk.Frame(self.root, width = 800, height = 400)
+        frame.grid(row=1, column=3, padx=5, pady=5)
+        frame.config(bg="black")
+        self.time_frame = frame
+        back_button = tk.Button(frame, font=('Courier', 30 , 'bold'), background = 'black', foreground ='red', cursor = "hand2", command = self.back)
+        back_button.place(x=25,y=300)
+        self.update_back(back_button)
+        
+    def create_temp_grid(self):
+        frame = tk.Frame(self.root, width = 800, height = 400)
+        frame.grid (row =1, column = 3, padx= 5, pady = 5)
+        frame.config(bg="black")
+        self.time_frame = frame
+        temp_label = tk.Label(frame, font=('Courier', 85, 'bold'), background='black', foreground='white')
+        temp_label.place(relx=0.5, rely=0.5, anchor='center')
+        back_button = tk.Button(frame, font = ('Courier', 30 , 'bold'), background = 'black', foreground = 'red', cursor = 'hand2', command = self.back)
+        back_button.place(x=25, y = 300)
+        self.update_temp(temp_label)
+        self.update_back(back_button)
+
     def on_thumbnail_click(self, row, column):
         print(f"Thumbnail clicked! Row: {row}, Column: {column}")
 
@@ -58,36 +91,33 @@ class ImageGridApp:
             self.function_1_3()
 
     def back(self):
-        self.frame.grid_forget()
-
-    def function_0_0(self):
-        print("Function for button at Row: 0, Column: 0")
-        self.frame.grid_forget()
-        self.create_time_grid()
-        #self.back()
-
-    def create_time_grid(self):
-        frame = tk.Frame(self.root, width=800, height=400)
-        frame.grid(row=1, column=3, padx=5, pady=5)
-        frame.config(bg="black")
-        time_label = tk.Label(frame, font=('Courier', 85, 'bold'), background='black', foreground='white')
-        time_label.place(relx=0.5, rely=0.5, anchor='center')
-        back_button = tk.Button(frame, font=('Courier', 30, 'bold'),background='black', foreground='red', cursor="hand2", command = self.back())
-        back_button.place(x=25,y=300)
-        self.update_time(time_label)
-        self.update_back(back_button)
+        print("I HATE YOU")
+        self.time_frame.grid_forget()
+        self.create_image_grid()
+    
+    def update_temp(self, temp):
+        string_temp = "21.5 C"
+        temp.config(text=string_temp)
 
     def update_back(self, back):
         string_back = "back"
         back.config(text=string_back)
+        self.frame.grid_forget()
 
     def update_time(self, label):
         string_time = strftime('%H:%M:%S %p')
         label.config(text=string_time)
         self.root.after(1000, lambda: self.update_time(label))
 
+    def function_0_0(self):
+        print("Function for button at Row: 0, Column: 0")
+        self.frame.grid_forget()
+        self.create_time_grid()
+
     def function_0_1(self):
         print("Function for button at Row: 0, Column: 1")
+        self.frame.grid_forget()
+        self.create_calculator_grid()
 
     def function_0_2(self):
         print("Function for button at Row: 0, Column: 2")
@@ -103,6 +133,8 @@ class ImageGridApp:
 
     def function_1_2(self):
         print("Function for button at Row: 1, Column: 2")
+        self.frame.grid_forget()
+        self.create_temp_grid()
 
     def function_1_3(self):
         print("Function for button at Row: 1, Column: 3")
