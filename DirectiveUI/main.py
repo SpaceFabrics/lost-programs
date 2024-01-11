@@ -70,6 +70,124 @@ class ImageGridApp:
         self.update_temp(temp_label)
         self.update_back(back_button)
 
+    def create_maze_grid(self):
+        import pygame
+        import sys
+        import random
+
+        # Initialize Pygame
+        pygame.init()
+
+        # Constants
+        WIDTH, HEIGHT = 800, 400  # Previous screen size
+        FPS = 60
+        WHITE = (255, 255, 255)
+        RED = (255, 0, 0)
+        GREEN = (0, 255, 0)
+        PLAYER_SIZE = 50
+
+        # Maze dimensions
+        MAZE_WIDTH = WIDTH // PLAYER_SIZE
+        MAZE_HEIGHT = HEIGHT // PLAYER_SIZE
+
+        # Initialize the screen
+        screen = pygame.display.set_mode((WIDTH, HEIGHT))
+        pygame.display.set_caption("Maze Game")
+        clock = pygame.time.Clock()
+
+        # Generate a random maze using Recursive Backtracking algorithm
+        def generate_maze():
+            maze = [[1] * MAZE_WIDTH for _ in range(MAZE_HEIGHT)]
+            stack = []
+            start_x, start_y = random.randint(1, (MAZE_WIDTH // 2) - 1) * 2, random.randint(1, (MAZE_HEIGHT // 2) - 1) * 2
+            stack.append((start_x, start_y))
+            maze[start_y][start_x] = 0
+
+            while stack:
+                current_x, current_y = stack[-1]
+
+                neighbors = [(current_x + 2, current_y), (current_x - 2, current_y),
+                            (current_x, current_y + 2), (current_x, current_y - 2)]
+
+                unvisited_neighbors = [(nx, ny) for nx, ny in neighbors if 0 <= nx < MAZE_WIDTH and 0 <= ny < MAZE_HEIGHT and maze[ny][nx] == 1]
+
+                if unvisited_neighbors:
+                    next_x, next_y = random.choice(unvisited_neighbors)
+                    maze[next_y][next_x] = 0
+                    maze[(current_y + next_y) // 2][(current_x + next_x) // 2] = 0
+                    stack.append((next_x, next_y))
+                else:
+                    stack.pop()
+
+            return maze
+
+        # Initialize maze, player position, and completion counter
+        maze = generate_maze()
+        player_x, player_y = 1, 1
+        goal_x, goal_y = MAZE_WIDTH - 2, MAZE_HEIGHT - 2
+        completed_mazes = 0
+
+        # Arrow buttons
+        arrow_buttons = {
+            "left": pygame.Rect(50, 300, 50, 50),
+            "right": pygame.Rect(150, 300, 50, 50),
+            "up": pygame.Rect(100, 250, 50, 50),
+            "down": pygame.Rect(100, 350, 50, 50),
+        }
+
+        font = pygame.font.Font(None, 36)
+
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    if event.button == 1:  # Left mouse button
+                        for direction, rect in arrow_buttons.items():
+                            if rect.collidepoint(event.pos):
+                                # Simulate arrow key presses based on clicked button
+                                if direction == "left":
+                                    player_x = max(0, player_x - 1) if maze[player_y][player_x - 1] != 1 else player_x
+                                elif direction == "right":
+                                    player_x = min(MAZE_WIDTH - 1, player_x + 1) if maze[player_y][player_x + 1] != 1 else player_x
+                                elif direction == "up":
+                                    player_y = max(0, player_y - 1) if maze[player_y - 1][player_x] != 1 else player_y
+                                elif direction == "down":
+                                    player_y = min(MAZE_HEIGHT - 1, player_y + 1) if maze[player_y + 1][player_x] != 1 else player_y
+
+            # Check if the player reaches the goal
+            if player_x == goal_x and player_y == goal_y:
+                completed_mazes += 1
+                maze = generate_maze()
+                player_x, player_y = 1, 1
+
+            # Draw the maze
+            screen.fill(WHITE)
+            for row in range(MAZE_HEIGHT):
+                for col in range(MAZE_WIDTH):
+                    if maze[row][col] == 1:
+                        pygame.draw.rect(screen, RED, (col * PLAYER_SIZE, row * PLAYER_SIZE, PLAYER_SIZE, PLAYER_SIZE))
+                    elif maze[row][col] == 0 and (col != goal_x or row != goal_y):
+                        pygame.draw.rect(screen, WHITE, (col * PLAYER_SIZE, row * PLAYER_SIZE, PLAYER_SIZE, PLAYER_SIZE))
+                    elif col == goal_x and row == goal_y:
+                        pygame.draw.rect(screen, GREEN, (col * PLAYER_SIZE, row * PLAYER_SIZE, PLAYER_SIZE, PLAYER_SIZE))
+
+            # Draw the player
+            pygame.draw.rect(screen, (0, 0, 255), (player_x * PLAYER_SIZE, player_y * PLAYER_SIZE, PLAYER_SIZE, PLAYER_SIZE))
+
+            # Draw arrow buttons
+            for rect in arrow_buttons.values():
+                pygame.draw.rect(screen, (100, 100, 100), rect)
+
+            # Draw completion counter
+            text = font.render(f"Completed Mazes: {completed_mazes}", True, (0, 0, 0))
+            screen.blit(text, (10, 10))
+
+            pygame.display.flip()
+            clock.tick(FPS)
+
+
     def on_thumbnail_click(self, row, column):
         print(f"Thumbnail clicked! Row: {row}, Column: {column}")
 
@@ -138,6 +256,8 @@ class ImageGridApp:
 
     def function_1_3(self):
         print("Function for button at Row: 1, Column: 3")
+        self.frame.grid_forget()
+        self.create_maze_grid()
 
     def refresh_window(self):
         self.frame.grid_forget()
